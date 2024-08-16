@@ -1,24 +1,26 @@
-# SmartAgri
 
-SmartAgri improves agriculture with four key features: Genetic Engineering helps farmers choose traits for better crops, the Fertilizer Recommender System provides precise fertilizer advice, the Distribution System predicts fertilizer needs to prevent shortages, and the Pest and Disease Management System helps identify and manage crop issues.
+# Genetic Engineering
 
-// Create folders for server and user sides
+The Genetic Engineering Integration feature in the AgroPro system offers farmers valuable tools and resources to enhance their crops through genetic modifications. Farmers input details about their crop type, desired traits, and local environmental conditions into the system.
+In response, the system provides information on genetically modified (GM) crop varieties that meet their needs,
+along with step-by-step guidelines for applying genetic engineering techniques. It also includes local regulatory information,
+resources for further support, and impact analysis on potential benefits. By integrating this feature,
+AgroPro enables farmers to access advanced genetic solutions tailored to their specific conditions,
+improving crop yield, pest resistance, and drought tolerance, while ensuring compliance with regulatory standards.
 
-cd server
-cd client
+# Main Features
 
-// install packages for server side
+1. Genetic Engineering Database
+2. Genetic Trait Matching.
+3. Customized Genetic Engineering Plans
 
-1. npm init
-2. npm i express
-3. npm i mongoose cors jsonwebtoken
+# Genetic Engineering Database
 
-// create index.js file
+    * Crop Information : Crop Name, Scientific Info, Variety, Region
+    * Genetic Traits : Trait Name, Gene Associated, Modification Method, Description, Benefits, Risks
+    * Modification Details : Modification ID, Target Gene, Modification Technique, Outcomes, Field Trial Data
+    * Environmental Conditions : Soil Type, Climate, Pests, Diseases
+    * Regulatory Information : Approval Status, Regulatory Body, Guidelines
+    * Impact Analysis : Economic Impact, Environmental Impact, Social Impact
 
-set middlewares
-create mongoose connection
 
-// To run the server
-
---- cd server
---- npm run dev
