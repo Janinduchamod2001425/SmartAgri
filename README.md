@@ -20,5 +20,5 @@ create mongoose connection
 
 // To run the server
 
-# cd server
-# npm run dev
+--- cd server
+--- npm run dev
