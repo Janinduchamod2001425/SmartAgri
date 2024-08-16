@@ -1,3 +1,4 @@
+
 # Genetic Engineering
 
 The Genetic Engineering Integration feature in the AgroPro system offers farmers valuable tools and resources to enhance their crops through genetic modifications. Farmers input details about their crop type, desired traits, and local environmental conditions into the system.
@@ -21,3 +22,5 @@ improving crop yield, pest resistance, and drought tolerance, while ensuring com
     * Environmental Conditions : Soil Type, Climate, Pests, Diseases
     * Regulatory Information : Approval Status, Regulatory Body, Guidelines
     * Impact Analysis : Economic Impact, Environmental Impact, Social Impact
+
+
