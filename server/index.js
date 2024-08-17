@@ -2,11 +2,14 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import bodyParser from "body-parser";
+import route from "./fertilizer_recommender/routes/fertilizerRoutes.js";
 
 // load environment variables
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
 const URL = process.env.MONGOURL;
 
 // Middleware
@@ -28,3 +31,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.use("/api", route);
