@@ -1,25 +1,31 @@
-# SmartAgri
+# Agrochemicals  Distribution Optimizer 
 
-SmartAgri improves agriculture with four key features: Genetic Engineering helps farmers choose traits for better crops, the Fertilizer Recommender System provides precise fertilizer advice, the Distribution System predicts fertilizer needs to prevent shortages, and the Pest and Disease Management System helps identify and manage crop issues.
+This section discusses the methodologies used to create and implement the Agrochemicals Distribution Optimizer, with a focus on the use of a fractional knapsack optimization algorithm, the design of a distribution service, and the integration of these components into a functional system via the MERN stack. The methodology is broken down into four major components: system design and architecture, algorithm development, data gathering and preprocessing, and distribution service design.
 
-// Create folders for server and user sides
+# main features
 
-cd server
-cd client
 
-// install packages for server side
+Add and update warehouse locations, capacities and distances from main warehouse and provide required fertilizer amount for each month (CRUD). 
 
-1. npm init
-2. npm i express
-3. npm i mongoose cors jsonwebtoken
+Fertilizer usage request handling. 
 
-// create index.js file
+Fertilizer Requirement Prediction and store and manage monthly distribution ratios. 
 
-set middlewares
-create mongoose connection
+Distribution handling and execution with map. 
 
-// To run the server
+Distribution status tracking using QR code and notification handling. 
 
--- cd server
-or
--- npm run dev
+Generate reports using cost analysis and distribution. 
+
+
+# Add and update warehouse locations, capacities and distances from main warehouse and provide required fertilizer amount for each month (CRUD).
+
+Create: Allow users (e.g., Warehouse Managers) to input new warehouse data, including location, capacity, and distance from the main warehouse.
+
+Read: Retrieve and view existing warehouse data, helping users understand the distribution network's structure.
+
+Update: Modify existing warehouse data when there are changes in capacity, location, or distance.
+
+Delete: Remove warehouse entries that are no longer in use.
+
+Provide Required Fertilizer Amount for Each Month: Based on the stored warehouse data and predicted fertilizer needs, the system calculates and provides the required amount of fertilizers for each warehouse on a monthly basis.
