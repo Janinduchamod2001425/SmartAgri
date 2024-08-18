@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import warehouseRoutes from './warehouse/routes/warehouseRoutes.js'
+
 // load environment variables
 dotenv.config();
 
@@ -13,7 +15,8 @@ const URL = process.env.MONGOURL;
 app.use(cors());
 app.use(express.json());
 
-// Routes
+
+
 
 // MongoDB connection
 mongoose
@@ -32,8 +35,11 @@ app.use((err, res, req, next) => {
   });
 });
 
+app.use('/WarehouseRoutes', warehouseRoutes);
+
 // Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
