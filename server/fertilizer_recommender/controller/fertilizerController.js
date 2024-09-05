@@ -11,6 +11,7 @@ export const fcreate = async(req, res)=>{
         const savedDatga = await fertilizerData.save();
         res.status(200).json(savedDatga);
 
+
     }catch (error){
         res.status(500).json({error: error});
 
