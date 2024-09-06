@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import warehouseRoutes from './warehouse/routes/warehouseRoutes.js'
+import fertilizerReqRoutes from './FamFertilizer/routes/fertilizerReqRoutes.js'
 
 // load environment variables
 dotenv.config();
@@ -36,6 +37,7 @@ app.use((err, res, req, next) => {
 });
 
 app.use('/WarehouseRoutes', warehouseRoutes);
+app.use('/FertilizerReqRoutes', fertilizerReqRoutes);
 
 // Server
 const PORT = process.env.PORT || 3000;
