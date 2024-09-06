@@ -22,6 +22,15 @@ mongoose
   .catch((error) => console.error("Failed to connect to MongoDB:", error));
 
 // Global Error Handler
+app.use((err, res, req, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || "error";
+
+  res.status(err.statusCode).json({
+    status: err.status,
+    message: err.message,
+  });
+});
 
 // Server
 const PORT = process.env.PORT || 3000;
