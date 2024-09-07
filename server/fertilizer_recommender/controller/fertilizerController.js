@@ -16,11 +16,9 @@ export const fcreate = async(req, res)=>{
         res.status(500).json({error: error});
 
     }
-    
-
     }
 
-
+    
     export const fgetAll = async(req, res) => {
         try{
             const fertilizerData = await Fertilizer.find();
@@ -34,6 +32,8 @@ export const fcreate = async(req, res)=>{
             res.status(500).json({error: error});
         }
     }
+
+    
 
 
     export const fgetOne = async(req, res) => {
