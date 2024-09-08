@@ -5,7 +5,7 @@ export const create = async (req, res) => {
   try {
     const userData = new User(req.body);
 
-    if (userData) {
+    if (!userData) {
       return res.status(404).json({ msg: "User Not Found" });
     }
 
