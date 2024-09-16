@@ -1,47 +1,33 @@
 import express from "express";
 import mongoose from "mongoose";
+import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import warehouseRoutes from './warehouse/routes/warehouseRoutes.js'
-import fertilizerReqRoutes from './FamFertilizer/routes/fertilizerReqRoutes.js'
 
-// load environment variables
-dotenv.config();
+import fertilizerReqRoutes from './FamFertilizer/routes/fertilizerReqRoutes.js'
+import route from "./warehouse/routes/warehouseRoutes.js";
 
 const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+dotenv.config();
+
+const PORT = process.env.PORT || 8000;
 const URL = process.env.MONGOURL;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-
-
-
-// MongoDB connection
 mongoose
   .connect(URL)
-  .then(() => console.log("Connected to MongoDB🍃"))
-  .catch((error) => console.error("Failed to connect to MongoDB:", error));
+  .then(() => {
+    console.log("Database Connected");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((error) => console.log(error));
 
-// Global Error Handler
-app.use((err, res, req, next) => {
-  err.statusCode = err.statusCode || 500;
-  err.status = err.status || "error";
 
-  res.status(err.statusCode).json({
-    status: err.status,
-    message: err.message,
-  });
-});
-
-app.use('/WarehouseRoutes', warehouseRoutes);
+app.use('/WarehouseRoutes', route);
 app.use('/FertilizerReqRoutes', fertilizerReqRoutes);
 
-// Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
