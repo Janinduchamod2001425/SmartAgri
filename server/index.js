@@ -1,17 +1,23 @@
 import express from "express";
 import mongoose from "mongoose";
+import bodyParser from "body-parser"
 import cors from "cors";
 import dotenv from "dotenv";
+import pestRoutes from "./pest_disease/routes/pestRoutes.js";
+
 
 // load environment variables
 dotenv.config();
 
 const app = express();
+
+app.use(bodyParser.json());
 const URL = process.env.MONGOURL;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use("/api",pestRoutes);
 
 // Routes
 
@@ -33,7 +39,7 @@ app.use((err, res, req, next) => {
 });
 
 // Server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
